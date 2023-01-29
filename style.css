@@ -1,0 +1,6 @@
+.grid-square {
+    z-index: "relative";
+    border-color: white;
+    border-width: 6px;
+}
+
