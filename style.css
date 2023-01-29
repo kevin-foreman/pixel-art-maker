@@ -1,6 +1,57 @@
-.grid-square {
+body {
+    display: flex;
+}
+
+.grid-squares {
     z-index: "relative";
-    border-color: white;
-    border-width: 6px;
+    /* border: 5px solid black;
+    border-radius: 25%; */
+    padding: 2px;
+    margin: 2px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 55rem 7rem 7rem 7rem;
+    grid-template-rows: 7rem 7rem;
+    grid-template-areas: 
+    "s1 s2 s3"
+    "s1 s2 s4"
+}
+
+.s1 {
+    grid-area: s1;
+    background-color: white;
+    margin: 2px;
+    border: 5px solid black;
+    /* border-radius: 30%; */
+}
+
+.s2 {
+    grid-area: s2;
+    background-color: white;
+    margin: 2px;
+    border: 5px solid black;
+    /* border-radius: 30%; */
+}
+
+.s3 {
+    grid-area: s3;
+    background-color: white;
+    margin: 2px;
+    border: 5px solid black;
+    /* border-radius: 30%; */
+}
+
+.s4 {
+    grid-area: s4;
+    background-color: white;
+    margin: 2px;
+    border: 5px solid black;
+    /* border-radius: 30%; */
+}
+
+.change-to-red {
+    background-color: red;
 }
 
