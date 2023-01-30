@@ -1,25 +1,101 @@
-let gridSquare1 = document.getElementById("grid-square-1");
-let gridSquare2 = document.getElementById("grid-square-2");
-let gridSquare3 = document.getElementById("grid-square-3");
-let gridSquare4 = document.getElementById("grid-square-4");
+let NUM_PIXELS_IN_ROW = 16;
+let PIXEL_WIDTH = 50;
+let COLOR_PICKER_SELECTIONS = 16;
 
-gridSquare1.addEventListener("click", (event) => {
-    console.log("Square 1 was clicked!");
-    gridSquare1.classList.toggle("change-to-red");
+let canvas = document.querySelector('.canvas');
+canvas.style.width = PIXEL_WIDTH * NUM_PIXELS_IN_ROW + "px";
+let colorPicker = document.querySelector('.color-picker-container');
+
+for (let i = 0; i < NUM_PIXELS_IN_ROW ** 2; i++) {
+    let pixel = document.createElement('button');
+    // placeholder for the pixel class to create
+    pixel.classList.add("pixel");
+    pixel.style.width = PIXEL_WIDTH + "px";
+    pixel.style.height = PIXEL_WIDTH + "px";
+    pixel.border = "solid 2px black";
+    pixel.borderRadius = "20%";
+    canvas.append(pixel);
+};
+
+let pixels = document.querySelectorAll('.pixel');
+for (pixel of pixels) {
+    // console.log("Creating event listener");
+    pixel.addEventListener('click', (event) => {
+        let clicked = event.target;
+        clicked.style.background = colorChoice;
+    });
+};
+
+// Color palette
+let colorChoice = document.createElement('div');
+colorChoice.className = 'color-picker';
+colorChoice.style.border = "solid 2px black";
+// console.log(colorChoice);
+colorPicker.append(colorChoice);
+colorChoice.style.background = "blue";
+
+colorChoice.addEventListener('click', (event) => {
+    console.log("Picked blue")
+    colorChoice = "blue";
 });
 
-gridSquare2.addEventListener("click", (event) => {
-    console.log("Square 2 was clicked!");
-    gridSquare2.classList.toggle("change-to-red");
+let redChoice = document.createElement('div');
+redChoice.className = 'color-picker';
+redChoice.style.border = "solid 2px black";
+// console.log(redChoice);
+colorPicker.append(redChoice);
+redChoice.style.background = "red";
+
+redChoice.addEventListener('click', (event) => {
+    console.log("Picked red")
+    colorChoice = "red";
 });
 
-gridSquare3.addEventListener("click", (event) => {
-    console.log("Square 3 was clicked!");
-    gridSquare3.classList.toggle("change-to-red");
+let yellowChoice = document.createElement('div');
+yellowChoice.className = 'color-picker';
+yellowChoice.style.border = "solid 2px black";
+// console.log(yellowChoice);
+colorPicker.append(yellowChoice);
+yellowChoice.style.background = "yellow";
+
+yellowChoice.addEventListener('click', (event) => {
+    console.log("Picked yellow")
+    colorChoice = "yellow";
 });
 
-gridSquare4.addEventListener("click", (event) => {
-    console.log("Square 4 was clicked!");
-    gridSquare4.classList.toggle("change-to-red");
+let greenChoice = document.createElement('div');
+greenChoice.className = 'color-picker';
+greenChoice.style.border = "solid 2px black";
+// console.log(greenChoice);
+colorPicker.append(greenChoice);
+greenChoice.style.background = "green";
+
+greenChoice.addEventListener('click', (event) => {
+    console.log("Picked green")
+    colorChoice = "green";
+});
+
+let blackChoice = document.createElement('div');
+blackChoice.className = 'color-picker';
+blackChoice.style.border = "solid 2px black";
+// console.log(blackChoice);
+colorPicker.append(blackChoice);
+blackChoice.style.background = "black";
+
+blackChoice.addEventListener('click', (event) => {
+    console.log("Picked black")
+    colorChoice = "black";
+});
+
+let orangeChoice = document.createElement('div');
+orangeChoice.className = 'color-picker';
+orangeChoice.style.border = "solid 2px black";
+// console.log(orangeChoice);
+colorPicker.append(orangeChoice);
+orangeChoice.style.background = "orange";
+
+orangeChoice.addEventListener('click', (event) => {
+    console.log("Picked orange")
+    colorChoice = "orange";
 });
 

@@ -1,13 +1,31 @@
-body {
+.canvas {
     display: flex;
+    flex-wrap: wrap;
+    background-color: grey;
+    border-radius: 20px;
 }
 
-.grid-squares {
+.color-picker {
+    width: 20px;
+    height: 50%;
+    margin: 2%;
+    padding: 2%;
+    display: inline-block;
+    border-radius: 20%;
+}
+
+.color-picker-container {
+    width: 100%;
+    height: 50%;
+}
+
+
+
+/* .grid-squares {
     z-index: "relative";
-    /* border: 5px solid black;
-    border-radius: 25%; */
     padding: 2px;
     margin: 2px;
+   
 }
 
 .grid {
@@ -24,7 +42,7 @@ body {
     background-color: white;
     margin: 2px;
     border: 5px solid black;
-    /* border-radius: 30%; */
+    border-width: 2px;
 }
 
 .s2 {
@@ -32,7 +50,7 @@ body {
     background-color: white;
     margin: 2px;
     border: 5px solid black;
-    /* border-radius: 30%; */
+    border-width: 2px;
 }
 
 .s3 {
@@ -40,7 +58,8 @@ body {
     background-color: white;
     margin: 2px;
     border: 5px solid black;
-    /* border-radius: 30%; */
+    border-width: 2px;
+
 }
 
 .s4 {
@@ -48,10 +67,18 @@ body {
     background-color: white;
     margin: 2px;
     border: 5px solid black;
-    /* border-radius: 30%; */
+    border-width: 2px;
+
 }
 
-.change-to-red {
-    background-color: red;
+.color-pallete {
+    border: 5px solid black;
+    border-width: 2px;
+    margin: 2px;
+    background-color: white;
 }
+
+.change-to-blue {
+    background-color: blue;
+} */
 
