@@ -1,8 +1,13 @@
+body {
+    cursor: url('./assets/paint-brush-svg'), pointer;
+}
+
 .canvas {
     display: flex;
     flex-wrap: wrap;
     background-color: grey;
     border-radius: 20px;
+    cursor: url('./assets/paint-brush-svg.svg'), pointer;
 }
 
 .color-picker {

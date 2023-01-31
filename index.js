@@ -17,6 +17,17 @@ for (let i = 0; i < NUM_PIXELS_IN_ROW ** 2; i++) {
     canvas.append(pixel);
 };
 
+// Paint brush effect
+let gridEffect = document.getElementsByClassName("pixel");
+let gridArr = [];
+for (let i = 0; i < gridEffect.length; i++) {
+    gridEffect[i].onmousemove = function(e) {
+        if (e.buttons == 1)
+        gridEffect[i].style.backgroundColor = colorChoice;
+    };
+};
+
+
 let pixels = document.querySelectorAll('.pixel');
 for (pixel of pixels) {
     // console.log("Creating event listener");
@@ -227,11 +238,11 @@ currentColorBlock.className = 'color-picker';
 currentColorBlock.style.border = "solid 2px black";
 // console.log(currentColorBlock);
 colorPicker.append(currentColorBlock);
-currentColorBlock.style.background = "cyan";
+currentColorBlock.style.background = "white";
 
 currentColorBlock.addEventListener('click', (event) => {
-    console.log("Picked cyan")
-    currentColorBlock = "cyan";
+    console.log("Current color adjusted")
+    currentColorBlock.style.background = colorChoice;
 });
 
 
