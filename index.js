@@ -1,5 +1,5 @@
-let NUM_PIXELS_IN_ROW = 16;
-let PIXEL_WIDTH = 50;
+let NUM_PIXELS_IN_ROW = 50;
+let PIXEL_WIDTH = 15;
 let COLOR_PICKER_SELECTIONS = 16;
 
 let canvas = document.querySelector('.canvas');
@@ -26,7 +26,7 @@ for (pixel of pixels) {
     });
 };
 
-// Color palette
+// Color palette starts with blue
 let colorChoice = document.createElement('div');
 colorChoice.className = 'color-picker';
 colorChoice.style.border = "solid 2px black";
@@ -87,6 +87,18 @@ blackChoice.addEventListener('click', (event) => {
     colorChoice = "black";
 });
 
+let whiteChoice = document.createElement('div');
+whiteChoice.className = 'color-picker';
+whiteChoice.style.border = "solid 2px black";
+// console.log(brownChoice);
+colorPicker.append(whiteChoice);
+whiteChoice.style.background = "white";
+
+whiteChoice.addEventListener('click', (event) => {
+    console.log("Picked white")
+    colorChoice = "white";
+});
+
 let orangeChoice = document.createElement('div');
 orangeChoice.className = 'color-picker';
 orangeChoice.style.border = "solid 2px black";
@@ -98,4 +110,132 @@ orangeChoice.addEventListener('click', (event) => {
     console.log("Picked orange")
     colorChoice = "orange";
 });
+
+let violetChoice = document.createElement('div');
+violetChoice.className = 'color-picker';
+violetChoice.style.border = "solid 2px black";
+// console.log(violetChoice);
+colorPicker.append(violetChoice);
+violetChoice.style.background = "violet";
+
+violetChoice.addEventListener('click', (event) => {
+    console.log("Picked violet")
+    colorChoice = "violet";
+});
+
+let limeChoice = document.createElement('div');
+limeChoice.className = 'color-picker';
+limeChoice.style.border = "solid 2px black";
+// console.log(limeChoice);
+colorPicker.append(limeChoice);
+limeChoice.style.background = "lime";
+
+limeChoice.addEventListener('click', (event) => {
+    console.log("Picked lime")
+    colorChoice = "lime";
+});
+
+let pinkChoice = document.createElement('div');
+pinkChoice.className = 'color-picker';
+pinkChoice.style.border = "solid 2px black";
+// console.log(pinkChoice);
+colorPicker.append(pinkChoice);
+pinkChoice.style.background = "pink";
+
+pinkChoice.addEventListener('click', (event) => {
+    console.log("Picked pink")
+    colorChoice = "pink";
+});
+
+let brownChoice = document.createElement('div');
+brownChoice.className = 'color-picker';
+brownChoice.style.border = "solid 2px black";
+// console.log(brownChoice);
+colorPicker.append(brownChoice);
+brownChoice.style.background = "brown";
+
+brownChoice.addEventListener('click', (event) => {
+    console.log("Picked brown")
+    colorChoice = "brown";
+});
+
+let tanChoice = document.createElement('div');
+tanChoice.className = 'color-picker';
+tanChoice.style.border = "solid 2px black";
+// console.log(tanChoice);
+colorPicker.append(tanChoice);
+tanChoice.style.background = "tan";
+
+tanChoice.addEventListener('click', (event) => {
+    console.log("Picked tan")
+    colorChoice = "tan";
+});
+
+let cyanChoice = document.createElement('div');
+cyanChoice.className = 'color-picker';
+cyanChoice.style.border = "solid 2px black";
+// console.log(cyanChoice);
+colorPicker.append(cyanChoice);
+cyanChoice.style.background = "cyan";
+
+cyanChoice.addEventListener('click', (event) => {
+    console.log("Picked cyan")
+    colorChoice = "cyan";
+});
+
+let grayChoice = document.createElement('div');
+grayChoice.className = 'color-picker';
+grayChoice.style.border = "solid 2px black";
+// console.log(grayChoice);
+colorPicker.append(grayChoice);
+grayChoice.style.background = "gray";
+
+grayChoice.addEventListener('click', (event) => {
+    console.log("Picked gray")
+    colorChoice = "gray";
+});
+
+let darkgoldenrodChoice = document.createElement('div');
+darkgoldenrodChoice.className = 'color-picker';
+darkgoldenrodChoice.style.border = "solid 2px black";
+// console.log(darkgoldenrodChoice);
+colorPicker.append(darkgoldenrodChoice);
+darkgoldenrodChoice.style.background = "darkgoldenrod";
+
+darkgoldenrodChoice.addEventListener('click', (event) => {
+    console.log("Picked darkgoldenrod")
+    colorChoice = "darkgoldenrod";
+});
+
+let currentColorIndicator = document.createElement('div');
+currentColorIndicator.className = 'color-picker';
+currentColorIndicator.style.border = 'solid 2px black';
+currentColorIndicator.style.backgroundColor = 'white';
+currentColorIndicator.style.width = '85px';
+currentColorIndicator.style.height = '50%';
+currentColorIndicator.style.fontSize = 'x-small';
+currentColorIndicator.style.fontWeight = 'bold';
+currentColorIndicator.style.display = 'inlineblock';
+currentColorIndicator.style.margin = '2%';
+currentColorIndicator.style.padding = '2%';
+// console.log(currentColorIndicator);
+currentColorIndicator.innerHTML = 'Current color ---->';
+colorPicker.append(currentColorIndicator);
+
+let currentColorBlock = document.createElement('div');
+currentColorBlock.className = 'color-picker';
+currentColorBlock.style.border = "solid 2px black";
+// console.log(currentColorBlock);
+colorPicker.append(currentColorBlock);
+currentColorBlock.style.background = "cyan";
+
+currentColorBlock.addEventListener('click', (event) => {
+    console.log("Picked cyan")
+    currentColorBlock = "cyan";
+});
+
+
+
+
+
 
