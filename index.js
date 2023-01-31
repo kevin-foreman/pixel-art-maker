@@ -1,6 +1,24 @@
-let NUM_PIXELS_IN_ROW = 50;
+let NUM_PIXELS_IN_ROW = 48;
 let PIXEL_WIDTH = 15;
-let COLOR_PICKER_SELECTIONS = 16;
+let COLOR_PICKER_SELECTIONS = 15;
+
+// Local storage for saving pictures
+function saveCanvas() {
+    let myCanvas = document.getElementById('grid');
+    localStorage.setItem("myCanvas", myCanvas);
+};
+
+let saveButton = document.getElementById('savemycanvas');
+
+saveButton.addEventListener('click', (event) => {
+    saveCanvas();
+    console.log('My canvas saved!');
+});
+
+function loadCanvas () {
+    let myCanvas = localStorage.getItem('myCanvas');
+    document.getElementById('myCanvas').value = myCanvas;
+};
 
 let canvas = document.querySelector('.canvas');
 canvas.style.width = PIXEL_WIDTH * NUM_PIXELS_IN_ROW + "px";
@@ -12,22 +30,23 @@ for (let i = 0; i < NUM_PIXELS_IN_ROW ** 2; i++) {
     pixel.classList.add("pixel");
     pixel.style.width = PIXEL_WIDTH + "px";
     pixel.style.height = PIXEL_WIDTH + "px";
-    pixel.border = "solid 2px black";
+    pixel.border = "none";
     pixel.borderRadius = "20%";
     canvas.append(pixel);
 };
 
+saveCanvas();
+
 // Paint brush effect
-let gridEffect = document.getElementsByClassName("pixel");
-let gridArr = [];
-for (let i = 0; i < gridEffect.length; i++) {
-    gridEffect[i].onmousemove = function(e) {
+let paintEffect = document.getElementsByClassName("pixel");
+for (let i = 0; i < paintEffect.length; i++) {
+    paintEffect[i].onmousemove = function(e) {
         if (e.buttons == 1)
-        gridEffect[i].style.backgroundColor = colorChoice;
+        paintEffect[i].style.backgroundColor = colorChoice;
     };
 };
 
-
+// Add event listener to all the buttons
 let pixels = document.querySelectorAll('.pixel');
 for (pixel of pixels) {
     // console.log("Creating event listener");
@@ -48,8 +67,10 @@ colorChoice.style.background = "blue";
 colorChoice.addEventListener('click', (event) => {
     console.log("Picked blue")
     colorChoice = "blue";
+    currentColorBlock.style.background.toggle = colorChoice;
 });
 
+// Red color picker
 let redChoice = document.createElement('div');
 redChoice.className = 'color-picker';
 redChoice.style.border = "solid 2px black";
@@ -60,6 +81,8 @@ redChoice.style.background = "red";
 redChoice.addEventListener('click', (event) => {
     console.log("Picked red")
     colorChoice = "red";
+    console.log("Current color adjusted")
+    currentColorBlock.style.background = colorChoice;
 });
 
 let yellowChoice = document.createElement('div');
@@ -72,6 +95,8 @@ yellowChoice.style.background = "yellow";
 yellowChoice.addEventListener('click', (event) => {
     console.log("Picked yellow")
     colorChoice = "yellow";
+    console.log("Current color adjusted")
+    currentColorBlock.style.background = colorChoice;
 });
 
 let greenChoice = document.createElement('div');
@@ -84,6 +109,8 @@ greenChoice.style.background = "green";
 greenChoice.addEventListener('click', (event) => {
     console.log("Picked green")
     colorChoice = "green";
+    console.log("Current color adjusted")
+    currentColorBlock.style.background = colorChoice;
 });
 
 let blackChoice = document.createElement('div');
@@ -96,6 +123,8 @@ blackChoice.style.background = "black";
 blackChoice.addEventListener('click', (event) => {
     console.log("Picked black")
     colorChoice = "black";
+    console.log("Current color adjusted")
+    currentColorBlock.style.background = colorChoice;
 });
 
 let whiteChoice = document.createElement('div');
@@ -108,6 +137,8 @@ whiteChoice.style.background = "white";
 whiteChoice.addEventListener('click', (event) => {
     console.log("Picked white")
     colorChoice = "white";
+    console.log("Current color adjusted")
+    currentColorBlock.style.background = colorChoice;
 });
 
 let orangeChoice = document.createElement('div');
@@ -120,6 +151,8 @@ orangeChoice.style.background = "orange";
 orangeChoice.addEventListener('click', (event) => {
     console.log("Picked orange")
     colorChoice = "orange";
+    console.log("Current color adjusted")
+    currentColorBlock.style.background = colorChoice;
 });
 
 let violetChoice = document.createElement('div');
@@ -132,6 +165,8 @@ violetChoice.style.background = "violet";
 violetChoice.addEventListener('click', (event) => {
     console.log("Picked violet")
     colorChoice = "violet";
+    console.log("Current color adjusted")
+    currentColorBlock.style.background = colorChoice;
 });
 
 let limeChoice = document.createElement('div');
@@ -144,6 +179,8 @@ limeChoice.style.background = "lime";
 limeChoice.addEventListener('click', (event) => {
     console.log("Picked lime")
     colorChoice = "lime";
+    console.log("Current color adjusted")
+    currentColorBlock.style.background = colorChoice;
 });
 
 let pinkChoice = document.createElement('div');
@@ -156,6 +193,8 @@ pinkChoice.style.background = "pink";
 pinkChoice.addEventListener('click', (event) => {
     console.log("Picked pink")
     colorChoice = "pink";
+    console.log("Current color adjusted")
+    currentColorBlock.style.background = colorChoice;
 });
 
 let brownChoice = document.createElement('div');
@@ -168,6 +207,8 @@ brownChoice.style.background = "brown";
 brownChoice.addEventListener('click', (event) => {
     console.log("Picked brown")
     colorChoice = "brown";
+    console.log("Current color adjusted")
+    currentColorBlock.style.background = colorChoice;
 });
 
 let tanChoice = document.createElement('div');
@@ -180,6 +221,8 @@ tanChoice.style.background = "tan";
 tanChoice.addEventListener('click', (event) => {
     console.log("Picked tan")
     colorChoice = "tan";
+    console.log("Current color adjusted")
+    currentColorBlock.style.background = colorChoice;
 });
 
 let cyanChoice = document.createElement('div');
@@ -192,6 +235,8 @@ cyanChoice.style.background = "cyan";
 cyanChoice.addEventListener('click', (event) => {
     console.log("Picked cyan")
     colorChoice = "cyan";
+    console.log("Current color adjusted")
+    currentColorBlock.style.background = colorChoice;
 });
 
 let grayChoice = document.createElement('div');
@@ -204,6 +249,8 @@ grayChoice.style.background = "gray";
 grayChoice.addEventListener('click', (event) => {
     console.log("Picked gray")
     colorChoice = "gray";
+    console.log("Current color adjusted")
+    currentColorBlock.style.background = colorChoice;
 });
 
 let darkgoldenrodChoice = document.createElement('div');
@@ -216,6 +263,8 @@ darkgoldenrodChoice.style.background = "darkgoldenrod";
 darkgoldenrodChoice.addEventListener('click', (event) => {
     console.log("Picked darkgoldenrod")
     colorChoice = "darkgoldenrod";
+    console.log("Current color adjusted")
+    currentColorBlock.style.background = colorChoice;
 });
 
 let currentColorIndicator = document.createElement('div');
@@ -233,6 +282,8 @@ currentColorIndicator.style.padding = '2%';
 currentColorIndicator.innerHTML = 'Current color ---->';
 colorPicker.append(currentColorIndicator);
 
+// Define the empty current color block
+// Event listeners on the other colors will change the color of this block dynamically
 let currentColorBlock = document.createElement('div');
 currentColorBlock.className = 'color-picker';
 currentColorBlock.style.border = "solid 2px black";
@@ -240,13 +291,10 @@ currentColorBlock.style.border = "solid 2px black";
 colorPicker.append(currentColorBlock);
 currentColorBlock.style.background = "white";
 
-currentColorBlock.addEventListener('click', (event) => {
-    console.log("Current color adjusted")
-    currentColorBlock.style.background = colorChoice;
-});
+// Custom color picker
+let customColor = document.getElementById('colorpicker');
+customColor.addEventListener('click', (event) => {
+    customColor.value = colorChoice;
+})
 
-
-
-
-
-
+saveCanvas();
