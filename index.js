@@ -51,9 +51,10 @@ saveCanvas();
 // Paint brush effect
 let paintEffect = document.getElementsByClassName("pixel");
 for (let i = 0; i < paintEffect.length; i++) {
-    paintEffect[i].onmousemove = function(e) {
-        if (e.buttons == 1)
-        paintEffect[i].style.backgroundColor = colorChoice;
+    paintEffect[i].onmousemove = function (e) {
+        if (e.buttons == 1) {
+            paintEffect[i].style.backgroundColor = colorChoice;
+        };
     };
 };
 
